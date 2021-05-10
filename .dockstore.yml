@@ -1,5 +1,5 @@
 version: 1.2
 workflows:
-   - name: COVIDSeq-SE-assembly
+   - name: COVIDSeqSEassembly
      subclass: WDL
-     primaryDescriptorPath: COVIDSeq-SE-assembly/COVIDSeq-SE-assembly.wdl
+     primaryDescriptorPath: COVIDSeqSEassembly/COVIDSeqSEassembly.wdl
