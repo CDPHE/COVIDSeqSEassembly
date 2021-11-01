@@ -128,7 +128,7 @@ task trimmomatic {
     runtime {
         cpu:    4
         memory:    "8 GiB"
-        disks:    "local-disk 1 HDD"
+        disks:    "local-disk 10 HDD"
         bootDiskSizeGb:    10
         preemptible:    0
         maxRetries:    0
@@ -160,7 +160,7 @@ task bbduk_clean {
     runtime {
         cpu:    4
         memory:    "8 GiB"
-        disks:    "local-disk 1 HDD"
+        disks:    "local-disk 100 SSD"
         bootDiskSizeGb:    10
         preemptible:    0
         maxRetries:    0
@@ -192,7 +192,7 @@ task fastqc {
     runtime {
         cpu:    1
         memory:    "2 GiB"
-        disks:    "local-disk 1 HDD"
+        disks:    "local-disk 200 SSD"
         bootDiskSizeGb:    10
         preemptible:    0
         maxRetries:    0
@@ -230,7 +230,7 @@ task align_reads {
     runtime {
         cpu:    2
         memory:    "8 GiB"
-        disks:    "local-disk 100 SSD"
+        disks:    "local-disk 200 SSD"
         bootDiskSizeGb:    100
         preemptible:    0
         maxRetries:    0
@@ -266,7 +266,7 @@ task ivar_trim {
     runtime {
         cpu:    2
         memory:    "8 GiB"
-        disks:    "local-disk 1 HDD"
+        disks:    "local-disk 200 SSD"
         bootDiskSizeGb:    10
         preemptible:    0
         maxRetries:    0
@@ -301,7 +301,7 @@ task ivar_var {
     runtime {
         cpu:    2
         memory:    "8 GiB"
-        disks:    "local-disk 1 HDD"
+        disks:    "local-disk 200 SSD"
         bootDiskSizeGb:    10
         preemptible:    0
         maxRetries:    0
@@ -335,7 +335,7 @@ task ivar_consensus {
     runtime {
         cpu:    2
         memory:    "8 GiB"
-        disks:    "local-disk 1 HDD"
+        disks:    "local-disk 10 HDD"
         bootDiskSizeGb:    10
         preemptible:    0
         maxRetries:    0
@@ -372,7 +372,7 @@ task bam_stats {
     runtime {
         cpu:    2
         memory:    "8 GiB"
-        disks:    "local-disk 1 HDD"
+        disks:    "local-disk 10 HDD"
         bootDiskSizeGb:    10
         preemptible:    0
         maxRetries:    0
