@@ -5,7 +5,7 @@ workflow COVIDSeqSEassembly {
     input {
         String    sample_id
         File    fastq
-        File    V3arctic
+        File    primer_bed
         File    covid_genome
         File    covid_gff
         File    preprocess_python_script
@@ -43,7 +43,7 @@ workflow COVIDSeqSEassembly {
     call ivar_trim {
         input:
             sample_id = sample_id,
-            primers = V3arctic,
+            primers = primer_bed,
             bam = align_reads.out_bam
     }
 
