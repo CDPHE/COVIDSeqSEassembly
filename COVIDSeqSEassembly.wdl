@@ -103,6 +103,7 @@ workflow COVIDSeqSEassembly {
         File cov_out = bam_stats.cov_out
         File renamed_consensus = rename_fasta.renamed_consensus
         File percent_cvg_csv = calc_percent_cvg.percent_cvg_csv
+        String assembler_version = align_reads.assembler_version
     }
 }
 
@@ -213,6 +214,9 @@ task align_reads {
 
     command <<<
         
+        assembler_version="bwa 0.7.17-r1188"
+        echo assembler_version > VERSION
+        
         bwa index -p reference.fasta -a is ~{ref}
         bwa mem -t 2 reference.fasta ~{fastq} | \
         samtools sort | \
@@ -224,6 +228,7 @@ task align_reads {
     output {
 
         File out_bam = "${sample_id}_aln.sorted.bam"
+        String assembler_version = read_string("VERSION")
 
     }
 
