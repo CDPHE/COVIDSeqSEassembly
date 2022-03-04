@@ -213,9 +213,8 @@ task align_reads {
     Int disk_size = 3 * ceil(size(fastq, "GB"))
 
     command <<<
-        
-        assembler_version="bwa 0.7.17-r1188"
-        echo assembler_version > VERSION
+       
+        echo bwa 0.7.17-r1188 > VERSION
         
         bwa index -p reference.fasta -a is ~{ref}
         bwa mem -t 2 reference.fasta ~{fastq} | \
